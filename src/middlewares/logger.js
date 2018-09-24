@@ -67,9 +67,10 @@ const logger = createLogger({
   ]
 });
 
+// Substring method removes the newline added by morgan
 logger.stream = {
   write(message, encoding) {
-    logger.info(message);
+    logger.info(message.substring(0, message.lastIndexOf('\n')));
   }
 };
 

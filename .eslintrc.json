@@ -9,6 +9,7 @@
   },
   "extends": ["airbnb-base", "plugin:prettier/recommended"],
   "rules": {
+    "radix": "off",
     "prettier/prettier": [
       "error",
       {

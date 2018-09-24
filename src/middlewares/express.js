@@ -5,6 +5,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 
 import logger from './logger';
+import routes from '../routes/v1';
 
 const app = express();
 
@@ -20,5 +21,8 @@ app.use(cors());
 
 // HTTP request logging
 app.use(morgan('combined', { stream: logger.stream }));
+
+// Mount api v1 routes
+app.use('/v1', routes);
 
 export default app;
